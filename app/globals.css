@@ -1,33 +1,15 @@
 @import "tailwindcss";
-
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.145 0 0);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
-  --color-primary: oklch(0.205 0 0);
-  --color-primary-foreground: oklch(0.985 0 0);
-  --color-secondary: oklch(0.97 0 0);
-  --color-secondary-foreground: oklch(0.205 0 0);
-  --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
-  --color-accent: oklch(0.97 0 0);
-  --color-accent-foreground: oklch(0.205 0 0);
-  --color-destructive: oklch(0.577 0.245 27.325);
-  --color-border: oklch(0.922 0 0);
-  --color-input: oklch(0.922 0 0);
-  --color-ring: oklch(0.708 0 0);
-  --radius: 0.5rem;
+  --color-ivory: #faf8f5; --color-sage-light: #eef2ec; --color-sage: #8aab8a; --color-sage-dark: #526d54; --color-clay: #c4875a; --color-clay-dark: #a96e45; --color-charcoal: #2d2d2d; --color-muted: #747873;
+  --font-sans: "Inter", "Avenir Next", ui-sans-serif, system-ui, sans-serif; --font-serif: "Playfair Display", "Iowan Old Style", "Baskerville", Georgia, serif;
 }
-
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+  * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: var(--color-ivory); color: var(--color-charcoal); font-family: var(--font-sans); } button, a, input, select, textarea { outline-color: var(--color-clay); }
 }
+@layer components {
+  .eyebrow { font-size: .75rem; line-height: 1rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--color-sage-dark); }
+  .section-title { font-family: var(--font-serif); font-size: clamp(2.35rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -.03em; }
+  .field { width: 100%; border: 1px solid rgb(45 45 45 / .13); border-radius: .9rem; background: var(--color-ivory); padding: .85rem 1rem; font-size: .875rem; transition: border-color .2s, box-shadow .2s; }
+  .field:focus { border-color: var(--color-clay); box-shadow: 0 0 0 3px rgb(196 135 90 / .12); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
